@@ -1,8 +1,8 @@
 # Flinterpreter
 ## An interpreter for a function language, hooray!
 - - -
-Flinterpreter is a small program written in python 2.7 (~170 loc). The only file worth looking is `interpreter.py`, the others constitute the awesome library [`parsley`](parsley).
-The interepter runs programs written in a special LISP-like language (taught in the course Programming language semantics @ [FMI, SU](fmi))
+Flinterpreter is a small program written in python 2.7 (~170 loc). The only file worth looking is `interpreter.py`, the others constitute the awesome library [`parsley`][parsley].
+The interepter runs programs written in a special LISP-like language (taught in the course Programming language semantics @ [FMI, SU][fmi])
 that I'll call FL for short.
 
 First, let us see some examples of programs written in FL.
@@ -22,7 +22,7 @@ mul(x, y) = if y == 0 then 0 else mul(x, y - 1) + x
 
 To run the programs above, pass their code as string to the constructor of `Flinterpreter`:
 
-```
+```python
 interpreter = Flinterpreter(code)
 result = interpreter.evaluate()
 print result
