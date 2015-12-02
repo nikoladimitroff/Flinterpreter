@@ -2,15 +2,15 @@
 ## An interpreter for a function language, hooray!
 - - -
 Flinterpreter is a small program written in python 2.7 (~170 loc). The only file worth looking is `interpreter.py`, the others constitute the awesome library [`parsley`][parsley].
-The interepter runs programs written in a special LISP-like language (taught in the course Programming language semantics @ [FMI, SU][fmi])
+The interepter runs programs written in a special Haskell-like language (taught in the course Programming language semantics @ [FMI, SU][fmi])
 that I'll call FL for short.
 
 First, let us see some examples of programs written in FL.
 ## Examples
-**Factoriel:**
+**Factorial:**
 ```
-factoriel(10) where
-factoriel(x) = if x == 0 then 1 else x * factoriel(x - 1)
+factorial(10) where
+factorial(x) = if x == 0 then 1 else x * factorial(x - 1)
 ```
 
 **Power:**
@@ -39,16 +39,16 @@ Other than that, you can also use `if condition then expression else expression`
 
 If anyone cares, here's the FL's grammar:
 ```
-expression = expression nat\_op expression 
+expression = expression int_op expression 
              | if bool then expression1 else expression2
              | function(expression, ..., expression)
              | integer
-nat\_op = \+ | \- | \* | / | %
+int_op = + | - | * | / | %
 bool = expression comparer expression 
        | bool bool_op bool
        | not bool
 comparer = < | <= | >= | > | == | !=
-bool\_op = and | or
+bool_op = and | or
 function = f | g | ... (whatever functions you've declared)
 ```
 
